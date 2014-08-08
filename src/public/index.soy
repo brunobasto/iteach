@@ -1,0 +1,87 @@
+{namespace index}
+
+/**
+ * This template will be rendered by SoyWeb when the user loads static.soy.
+ * It deliberately includes dummy data so the designer can get a feel for how
+ * the task list will appear with real data rather with minimal copy and paste.
+ */
+{template .soyweb}
+{call main.page}
+  {param baseDir: './' /}
+  {param content}
+    <link rel="stylesheet" href="styles/home-grid.css">
+
+    {call menu.side}
+      {param baseDir: './' /}
+      {param cssScope: 'index' /}
+    {/call}
+
+    <div id="main">
+      <div class="header">
+        <h1>iTeach</h1>
+        <h2>A modern approach for teaching languages</h2>
+      </div>
+      <div class="content"></div>
+
+      <div class="content">
+        <form class="pure-form">
+            <input type="text" class="pure-input-1 pure-input-rounded" placeholder="Search...">
+        </form>
+      </div>
+
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+
+      <div class="content">
+        {call .examples}
+          {param items: [
+            [
+              'name': 'Study',
+              'description': 'A simple friend tagging application that is easy to build and friendly to use',
+              'image': 'images/app/study.jpg',
+              'url': './examples/study.html'
+            ],
+            [
+              'name': 'Practice',
+              'description': 'Go into the future and explore Campo Di Fiori in Italy by just moving your head in the desired direction',
+              'image': 'images/app/practice.jpg',
+              'url': './examples/practice.html'
+            ],
+            [
+              'name': 'Talk',
+              'description': 'Race against the clock using your own car wheel in this color iTeach game',
+              'image': 'images/app/talk.jpg',
+              'url': './examples/talk.html'
+            ]
+          ] /}
+        {/call}
+      </div>
+
+      <footer class="credits">
+        <p>Made with <span class="love">♥</span> by teachers who care about their students.</p>
+      </footer>
+    </div>
+  {/param}
+{/call}
+{/template}
+
+/**
+ * @param items
+ */
+{template .examples}
+  <div class="grid">
+    {foreach $item in $items}
+      <figure class="effect">
+        <img src="{$item.image}" alt="">
+        <figcaption>
+          <h2>{$item.name|noAutoescape}</h2>
+          <p>{$item.description}</p>
+          <a href="{$item.url}">View more</a>
+        </figcaption>
+      </figure>
+    {/foreach}
+  </div>
+{/template}

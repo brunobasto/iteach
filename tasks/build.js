@@ -97,6 +97,11 @@ gulp.task('build-templates', function() {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('copy-bower', function () {
+  return gulp.src('bower_components/**')
+    .pipe(gulp.dest('dist/public/bower'));
+});
+
 gulp.task('build', ['clean'], function(cb) {
-  runSequence('build-copy', 'build-images', 'build-icons', 'build-scripts', 'build-styles', 'build-compass', 'build-html', 'build-markdown', 'build-templates', cb);
+  runSequence('build-copy', 'build-images', 'build-icons', 'build-scripts', 'build-styles', 'build-compass', 'build-html', 'build-markdown', 'build-templates', 'copy-bower', cb);
 });

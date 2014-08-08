@@ -1,0 +1,142 @@
+html, body, #layout, #main {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+  color: #7564DB;
+  text-decoration: none;
+  border-bottom: 1px dotted #7564DB;
+}
+
+p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+pre,
+code {
+  font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+  background: rgb(250, 250, 250);
+}
+
+pre {
+  overflow-x: auto;
+  padding: 1em;
+  border: 1px solid #eee;
+  border-right-width: 1px;
+  border-left-width: 1px;
+}
+
+.gh-btns {
+  width: 285px;
+  margin: 0 auto;
+}
+
+.content-subhead {
+  color: #666;
+}
+
+.content-subinfo {
+  text-align: right;
+  height: 35px;
+}
+
+.code-install {
+  text-align: center;
+  width: 255px;
+  margin: 50px auto 20px;
+  display: block;
+}
+
+.pure-button-primary,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+  background: #a64ceb;
+}
+
+.btn-download-container {
+  text-align: center;
+}
+
+.btn-download {
+  text-transform: uppercase;
+  padding: 1em;
+}
+
+.btn-download-icon {
+  vertical-align: bottom;
+  padding-right: 30px;
+}
+
+.credits {
+  min-height: 70px;
+  background-color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.credits .love {
+  color: #9f3fcf;
+  display: inline-block;
+  font-size: 1.4em;
+  position: relative;
+  -webkit-transform: scale(.9);
+  -moz-transform: scale(.9);
+  transform: scale(.9);
+  -webkit-animation: love .5s infinite linear alternate-reverse;
+  -moz-animation: love .5s infinite linear alternate-reverse;
+  animation: love .5s infinite linear alternate-reverse;
+}
+
+@-webkit-keyframes love {
+  to {
+    -webkit-transform: scale(1.2)
+  }
+}
+
+@-moz-keyframes love {
+  to {
+    -moz-transform: scale(1.2)
+  }
+}
+
+@keyframes love {
+  to {
+    transform: scale(1.2)
+  }
+}
+
+.credits li {
+  display: inline-block;
+  list-style: none;
+  text-align: left;
+  width: 139px;
+}
+
+.credits li a {
+  border: none;
+}
+
+.credits li span {
+  border-bottom: 1px dotted #7564DB;
+  line-height: 1.5em;
+}
+
+.credits li img {
+  border-radius: 4px;
+  float: left;
+  margin-right: 10px;
+  display: block;
+}
