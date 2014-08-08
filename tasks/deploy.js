@@ -1,11 +1,9 @@
 'use strict';
 
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 var plugins = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');
 var spawn = require('child_process').spawn;
-var util = require('./util');
 
 gulp.task('install-bower', function (cb) {
   spawn('bower', ['install'], {
