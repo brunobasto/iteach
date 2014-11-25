@@ -39,11 +39,18 @@ ClassLoader.prototype.getBasePath = function() {
  * @return {Object|Function}
  */
 ClassLoader.prototype.loadClass = function(name) {
-  var clazz = this.cache[name];
+  // var clazz = this.cache[name];
+
+  var clazz = null;
   if (!clazz) {
     try {
-      clazz = this.cache[name] = require(path.resolve(process.cwd(), this.getBasePath(), this.makeFilepath_(name)));
+      var classpath = path.resolve(process.cwd(), this.getBasePath(), this.makeFilepath_(name));
+
+      delete require.cache[classpath];
+
+      clazz = this.cache[name] = require(classpath);
     } catch (err) {
+      console.log(err);
       throw new Error('Class ' + name + ' not found.');
     }
   }
@@ -56,7 +63,7 @@ ClassLoader.prototype.loadClass = function(name) {
  * @private
  */
 ClassLoader.prototype.makeFilepath_ = function(name) {
-  return name.replace(/\./g, path.sep);
+  return name.replace(/\./g, path.sep) + '.js';
 };
 
 /**

@@ -160,30 +160,41 @@ App.prototype.setRouteConfigurator = function(routeConfigurator) {
       continue;
     }
 
-    var Class = this.classLoader.loadClass(actionClass);
-
-    var action;
-    if (typeof Class === 'function') {
-      action = new Class();
-    } else {
-      action = new BaseAction();
-      action[actionMethod] = Class[actionMethod];
-    }
-
-    var middleware = action[actionMethod];
-    if (!middleware) {
-      throw new Error('Invalid route ' + routeConfigurator.getRoutesFilepath() + ' ' + route.toString());
-    }
-
-    action.setTemplateEngine(this.getTemplateEngine());
+    var loadMiddlewareInternal = function() {
+      this.getMiddlewareForRoute(route).apply(null, arguments);
+    }.bind(this);
 
     if (route.getHttpMethod()) {
       var verb = route.getHttpMethod().toLowerCase();
-      this.engine[verb](route.getPath(), middleware.bind(action));
+      this.engine[verb](route.getPath(), loadMiddlewareInternal);
     } else {
-      this.engine.use(route.getPath(), middleware.bind(action));
+      this.engine.use(route.getPath(), loadMiddlewareInternal);
     }
   }
+};
+
+App.prototype.getMiddlewareForRoute = function(route) {
+  var actionClass = route.getActionClass();
+  var actionMethod = route.getActionMethod();
+
+  var Class = this.classLoader.loadClass(actionClass);
+
+  var action;
+  if (typeof Class === 'function') {
+    action = new Class();
+  } else {
+    action = new BaseAction();
+    action[actionMethod] = Class[actionMethod];
+  }
+
+  var middleware = action[actionMethod].bind(action);
+  if (!middleware) {
+    throw new Error('Invalid route ' + this.getRouteConfigurator().getRoutesFilepath() + ' ' + route.toString());
+  }
+
+  action.setTemplateEngine(this.getTemplateEngine());
+
+  return middleware;
 };
 
 /**

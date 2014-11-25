@@ -97,7 +97,7 @@ gulp.task('build-templates', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('copy-bower', function () {
+gulp.task('copy-bower', function() {
   return gulp.src('bower_components/**')
     .pipe(gulp.dest('dist/public/bower'));
 });
