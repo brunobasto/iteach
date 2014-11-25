@@ -1,4 +1,7 @@
-html, body, #layout, #main {
+html,
+body,
+#layout,
+#main {
   height: 100%;
 }
 
@@ -11,9 +14,9 @@ h1 {
 }
 
 a {
-  color: #7564DB;
   text-decoration: none;
-  border-bottom: 1px dotted #7564DB;
+  color: #7564db;
+  border-bottom: 1px dotted #7564db;
 }
 
 p {
@@ -48,15 +51,15 @@ pre {
 }
 
 .content-subinfo {
-  text-align: right;
   height: 35px;
+  text-align: right;
 }
 
 .code-install {
-  text-align: center;
+  display: block;
   width: 255px;
   margin: 50px auto 20px;
-  display: block;
+  text-align: center;
 }
 
 .pure-button-primary,
@@ -71,58 +74,58 @@ a.pure-button-selected {
 }
 
 .btn-download {
-  text-transform: uppercase;
   padding: 1em;
+  text-transform: uppercase;
 }
 
 .btn-download-icon {
-  vertical-align: bottom;
   padding-right: 30px;
+  vertical-align: bottom;
 }
 
 .credits {
   min-height: 70px;
-  background-color: #fff;
   padding: 20px 0;
   text-align: center;
+  background-color: #fff;
 }
 
 .credits .love {
-  color: #9f3fcf;
-  display: inline-block;
   font-size: 1.4em;
   position: relative;
+  display: inline-block;
   -webkit-transform: scale(.9);
   -moz-transform: scale(.9);
   transform: scale(.9);
   -webkit-animation: love .5s infinite linear alternate-reverse;
   -moz-animation: love .5s infinite linear alternate-reverse;
   animation: love .5s infinite linear alternate-reverse;
+  color: #9f3fcf;
 }
 
 @-webkit-keyframes love {
   to {
-    -webkit-transform: scale(1.2)
+    -webkit-transform: scale(1.2);
   }
 }
 
 @-moz-keyframes love {
   to {
-    -moz-transform: scale(1.2)
+    -moz-transform: scale(1.2);
   }
 }
 
 @keyframes love {
   to {
-    transform: scale(1.2)
+    transform: scale(1.2);
   }
 }
 
 .credits li {
   display: inline-block;
+  width: 139px;
   list-style: none;
   text-align: left;
-  width: 139px;
 }
 
 .credits li a {
@@ -130,13 +133,13 @@ a.pure-button-selected {
 }
 
 .credits li span {
-  border-bottom: 1px dotted #7564DB;
   line-height: 1.5em;
+  border-bottom: 1px dotted #7564db;
 }
 
 .credits li img {
-  border-radius: 4px;
+  display: block;
   float: left;
   margin-right: 10px;
-  display: block;
+  border-radius: 4px;
 }

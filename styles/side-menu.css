@@ -21,6 +21,7 @@ body {
   position: relative;
   left: 185px;
 }
+
 #layout.active #menu {
   left: 185px;
   width: 185px;
@@ -104,12 +105,12 @@ body {
 }
 
 #menu .pure-menu li.main-item {
-  font-weight: 400;
-  padding: 5px 10px;
   font-family: Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
   font-size: 14px;
+  font-weight: 400;
   margin-top: 15px;
+  padding: 5px 10px;
+  text-transform: uppercase;
 }
 
 #menu .pure-menu-heading {
