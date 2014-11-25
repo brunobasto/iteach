@@ -33,13 +33,16 @@
   <!-- endbuild -->
 </head>
 <body>
-  changed!
   <div id="layout">
     {$content|noAutoescape}
   </div>
 
   <!-- build:js {$baseDir}scripts/all.min.js -->
+  <script src="{$baseDir}bower/jquery/dist/jquery.js"></script>
+  <script src="{$baseDir}bower/jquery-ui/jquery-ui.js"></script>
+  <script src="{$baseDir}scripts/jquery.fastLiveFilter.js"></script>
   <script src="{$baseDir}scripts/side-menu.js"></script>
+  <script src="{$baseDir}scripts/main.js"></script>
   <!-- endbuild -->
 </body>
 </html>
