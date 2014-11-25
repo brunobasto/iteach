@@ -1,15 +1,40 @@
 {namespace index}
 
 /**
- * This template will be rendered by SoyWeb when the user loads static.soy.
- * It deliberately includes dummy data so the designer can get a feel for how
- * the task list will appear with real data rather with minimal copy and paste.
+ * @param baseDir
+ * @param? pageName
  */
-{template .soyweb}
-{call main.page}
-  {param baseDir: './' /}
-  {param content}
-    <link rel="stylesheet" href="styles/home-grid.css">
+{template .page}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="author" content="Eduardo Lundgren">
+  <meta name="description" content="A modern approach for Computer Vision on the web.">
+
+  <meta property="og:title" content="tracking.js">
+  <meta property="og:description" content="A modern approach for Computer Vision on the web">
+  <meta property="og:image" content="http://trackingjs.com/images/app/site_screenshot.jpg">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>iTeach{if $pageName} | {$pageName}{/if}</title>
+
+  <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,300,100|Ubuntu" rel="stylesheet" type="text/css">
+
+  <!-- build:css {$baseDir}styles/all.min.css -->
+  <link rel="stylesheet" href="{$baseDir}bower/pure/pure-min.css">
+  <link rel="stylesheet" href="{$baseDir}styles/highlight.css">
+  <link rel="stylesheet" href="{$baseDir}styles/side-menu.css">
+  <link rel="stylesheet" href="{$baseDir}styles/main.css">
+  <!-- endbuild -->
+</head>
+<body>
+  changed!
+  <div id="layout">
+     <link rel="stylesheet" href="styles/home-grid.css">
 
     {call menu.side}
       {param baseDir: './' /}
@@ -64,8 +89,13 @@
         <p>Made with <span class="love">♥</span> by teachers who care about their students.</p>
       </footer>
     </div>
-  {/param}
-{/call}
+  </div>
+
+  <!-- build:js {$baseDir}scripts/all.min.js -->
+  <script src="{$baseDir}scripts/side-menu.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
 {/template}
 
 /**
@@ -77,7 +107,7 @@
       <figure class="effect">
         <img src="{$item.image}" alt="">
         <figcaption>
-          <h2>{$item.name|noAutoescape}</h2>
+          <h2>{$item.name}</h2>
           <p>{$item.description}</p>
           <a href="{$item.url}">View more</a>
         </figcaption>
