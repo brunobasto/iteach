@@ -1,0 +1,63 @@
+[
+	{
+		"name": "Monkey Lunch Box",
+		"maxAge": 6,
+		"minAge": 4,
+		"description": "O jogo monkey lunch Box apresenta diversas atividades que podem contribuir para o desenvolvimento do pensamento crítico (critical thinking), como jogo da memória, quebra-cabeças, atividades de categorização. Todas essas atividades trabalham o vocabulário de frutas, promovendo aos alunos oportunidade de revisitar esse vocabulário em tarefas diversificadas. Desse modo, ajuda no desenvolvimento de pronúncia e consolidação das palavras. As atividades podem funcionar como atividade de compreensão oral, que podem ser utilizadas como ferramenta de avaliação para os professores. A partir de um número de jogadas, o jogo traz novas palavras dentro do vocabulário de frutas, o que facilita para que os jogadores ao longo do tempo não se sintam desmotivados e sem desafio.",
+		"images": [
+			"monkey_lunch_box_01.png",
+			"monkey_lunch_box_02.png",
+			"monkey_lunch_box_03.png"
+		],
+		"platforms": [
+			"ios"
+		],
+		"vocabulary": [
+			"food",
+			"colors"
+		]
+	},
+	{
+		"name": "Preschool Mingoville",
+		"maxAge": 6,
+		"minAge": 6,
+		"description": "No jogo Preschool Mingoville, as crianças podem aprender Inglês por meio de um universo de atividades contínuas que englobam imagem, som e animações.  Os alunos podem treinar vocabulário, reconhecimento de palavras e praticar a pronúncia, com uma atividade para personalização, com gravação da voz da criança. Por apresentar atividades com forma escrita, deve ser utilizado com alunos alfabetizados em sua língua materna.",
+		"images": [
+			"preschool_mingoville_01.png",
+			"preschool_mingoville_02.png",
+			"preschool_mingoville_03.png",
+			"preschool_mingoville_04.png"
+		],
+		"platforms": [
+			"ios"
+		],
+		"vocabulary": [
+			"animals",
+			"diverse"
+		]
+	},
+	{
+		"name": "Fun English",
+		"maxAge": 6,
+		"minAge": 6,
+		"description": "O Fun English incorpora atividades e jogos interativos. É composto por um grupo de palavras que aparecem em diferentes contextos para ajudar na retenção do vocabulário. Utiliza vozes femininas e masculinas com sotaques americanos e britânicos para que os alunos identifiquem as sutilizas da pronúncia. Introduz o verb to be, com frases no singular e no plural.",
+		"images": [
+		],
+		"platforms": [
+			"ios"
+		],
+		"vocabulary": [
+		]
+	},
+	{
+		"name": "123 Numbers",
+		"maxAge": 9,
+		"minAge": 8,
+		"description": "O jogo 123 numbers oferece oportunidade de praticar os números de 1 a 20 em Inglês.",
+		"images": [
+		],
+		"platforms": [
+			"ios"
+		]
+	}
+]
