@@ -42,6 +42,8 @@
 		"minAge": 6,
 		"description": "O Fun English incorpora atividades e jogos interativos. É composto por um grupo de palavras que aparecem em diferentes contextos para ajudar na retenção do vocabulário. Utiliza vozes femininas e masculinas com sotaques americanos e britânicos para que os alunos identifiquem as sutilizas da pronúncia. Introduz o verb to be, com frases no singular e no plural.",
 		"images": [
+			"fun_english_01.jpeg",
+			"fun_english_02.jpeg"
 		],
 		"platforms": [
 			"ios"
@@ -55,6 +57,8 @@
 		"minAge": 8,
 		"description": "O jogo 123 numbers oferece oportunidade de praticar os números de 1 a 20 em Inglês.",
 		"images": [
+			"123_numbers_01.jpeg",
+			"123_numbers_02.jpeg"
 		],
 		"platforms": [
 			"ios"
