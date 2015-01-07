@@ -13,12 +13,16 @@ $(function() {
 			console.log('error', arguments);
 		})
 		.always(function() {
-			// alert( "complete" );
+			// alert('complete');
 		});
 	};
 
 	var populateList = function(results) {
-		$("#gameTemplate").tmpl(results).appendTo("#gamesList");
+		var gamesList = $('#gamesList');
+
+		gamesList.empty();
+
+		$('#gameTemplate').tmpl(results).appendTo(gamesList);
 	};
 
 	// Initial population
@@ -30,8 +34,6 @@ $(function() {
 		event.preventDefault();
 
 		var filters = searchForm.serializeArray();
-
-		console.log(filters);
 
 		var filteredGames = [];
 
@@ -91,7 +93,7 @@ $(function() {
 				}
 			});
 
-			// console.log(filteredGames);
+			populateList(filteredGames);
 		});
 	});
 });
