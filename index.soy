@@ -1,122 +1,47 @@
 {namespace index}
 
 /**
- * This template will be rendered by SoyWeb when the user loads static.soy.
- * It deliberately includes dummy data so the designer can get a feel for how
- * the task list will appear with real data rather with minimal copy and paste.
+ * Index page.
  */
 {template .soyweb}
-{call main.page}
-	{param baseDir: './' /}
-	{param content}
-		<link rel="stylesheet" href="styles/home-grid.css">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		{call menu.side}
-			{param baseDir: './' /}
-			{param cssScope: 'index' /}
-		{/call}
+  <meta name="author" content="Bruno Basto">
+  <meta name="description" content="A modern approach for teaching languages.">
 
-		<div id="main">
-			<div class="header">
-				<h1>iTeach</h1>
-				<h2>A modern approach for teaching languages</h2>
-			</div>
-			<div class="content"></div>
+  <meta property="og:title" content="iTeach">
+  <meta property="og:description" content="A modern approach for teaching languages.">
 
-			<div class="content">
-				<form class="pure-form">
-						<input id="search" type="text" class="pure-input-1 pure-input-rounded" placeholder="Buscar..." />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-						<div class="filter-entry">
-							<label>Idade entre:</label>
-							<select>
-							<option value="any">Qualquer</option>
-								<option value="12">12</option>
-								<option value="11">11</option>
-								<option value="10">10</option>
-								<option value="9">9</option>
-								<option value="8">8</option>
-								<option value="7">7</option>
-								<option value="6">6</option>
-								<option value="5">5</option>
-								<option value="4">4</option>
-								<option value="3">3</option>
-								<option value="2">2</option>
-								<option value="1">1</option>
-							</select>
+  <title>iTeach</title>
 
-							<label>e</label>
-							<select>
-								<option value="any">Qualquer</option>
-								<option value="12">12</option>
-								<option value="11">11</option>
-								<option value="10">10</option>
-								<option value="9">9</option>
-								<option value="8">8</option>
-								<option value="7">7</option>
-								<option value="6">6</option>
-								<option value="5">5</option>
-								<option value="4">4</option>
-								<option value="3">3</option>
-								<option value="2">2</option>
-								<option value="1">1</option>
-							</select>
+  <!-- build:css styles/all.min.css -->
+  <link rel="stylesheet" href="bower/pure/pure-min.css">
+  <link rel="stylesheet" href="styles/highlight.css">
+  <link rel="stylesheet" href="styles/side-menu.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body>
+  <div id="layout">
+    {call content.main}
+      {param baseDir: '' /}
+    {/call}
+  </div>
 
-							<label>anos</label>
-
-						</div>
-
-						<div class="filter-entry">
-
-							<label>Vocabulários:</label>
-
-							<input type="checkbox" />
-							<label>Animais</label>
-
-							<input type="checkbox" />
-							<label>Cores</label>
-
-							<input type="checkbox" />
-							<label>Comidas</label>
-
-						</div>
-
-						<div class="filter-entry">
-							<label>Sistema Operacional</label>
-							<select>
-								<option value="any">Qualquer</option>
-								<option value="ios">iOS</option>
-								<option value="adroid">Android</option>
-								<option value="pc">PC</option>
-							</select>
-						</div>
-				</form>
-			</div>
-
-			<div class="content" id="gamesList"></div>
-
-			<footer class="credits">
-				<p>Made with <span class="love">♥</span> by teachers who care about their students.</p>
-			</footer>
-		</div>
-	{/param}
-{/call}
-{/template}
-
-/**
- * @param items
- */
-{template .gamesList}
-	<div id="list" class="grid">
-		{foreach $item in $items}
-			<figure class="effect">
-				<img src="{$item.image}" alt="">
-				<figcaption>
-					<h2>{$item.name|noAutoescape}</h2>
-					<p>{$item.description}</p>
-					<a href="{$item.url}">View more</a>
-				</figcaption>
-			</figure>
-		{/foreach}
-	</div>
+  <!-- build:js scripts/all.min.js -->
+  <script src="bower/jquery/dist/jquery.js"></script>
+  <script src="bower/jquery-ui/jquery-ui.js"></script>
+  <script src="scripts/jquery.fastLiveFilter.js"></script>
+  <script src="scripts/jquery.tmpl.js"></script>
+  <script src="scripts/side-menu.js"></script>
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
 {/template}
