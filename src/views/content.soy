@@ -1,0 +1,125 @@
+{namespace content}
+
+/**
+ * @param baseDir
+ */
+{template .main}
+  <link rel="stylesheet" href="styles/home-grid.css">
+
+  {call menu.side}
+    {param baseDir: $baseDir /}
+  {/call}
+
+  <div id="main">
+    <div class="header">
+      <h1>iTeach</h1>
+      <h2>A modern approach for teaching languages</h2>
+    </div>
+    <div class="content"></div>
+
+    <div class="content">
+      <form class="pure-form" id="searchForm">
+          <input name="query" id="query" type="text" class="pure-input-1 pure-input-rounded" placeholder="Buscar..." />
+
+          <div class="filter-entry">
+            <label>Idade entre:</label>
+
+            <select name="minAge">
+              <option value="any">Qualquer</option>
+              <option value="12">12</option>
+              <option value="11">11</option>
+              <option value="10">10</option>
+              <option value="9">9</option>
+              <option value="8">8</option>
+              <option value="7">7</option>
+              <option value="6">6</option>
+              <option value="5">5</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+            </select>
+
+            <label>e</label>
+
+            <select name="maxAge">
+              <option value="any">Qualquer</option>
+              <option value="12">12</option>
+              <option value="11">11</option>
+              <option value="10">10</option>
+              <option value="9">9</option>
+              <option value="8">8</option>
+              <option value="7">7</option>
+              <option value="6">6</option>
+              <option value="5">5</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+            </select>
+
+            <label>anos</label>
+
+          </div>
+
+          <div class="filter-entry">
+
+            <label>Vocabulários: </label>
+
+            <label>
+              <input name="vocabulary_animals" type="checkbox" value="animals" />
+
+              Animais
+            </label>
+
+            <label>
+              <input name="vocabulary_colors" type="checkbox" value="colors" />
+
+              Cores
+            </label>
+
+            <label>
+              <input name="vocabulary_food" type="checkbox" value="food" />
+
+              Comidas
+            </label>
+
+          </div>
+
+          <div class="filter-entry">
+            <label>
+              Sistema Operacional:
+
+              <select name="platform">
+                <option value="any">Qualquer</option>
+                <option value="ios">iOS</option>
+                <option value="adroid">Android</option>
+                <option value="pc">PC</option>
+              </select>
+            </label>
+          </div>
+
+          <button class="pure-button pure-button-primary" type="submit">Buscar</button>
+      </form>
+    </div>
+
+    {literal}
+    <script id="gameTemplate" type="text/x-jQuery-tmpl">
+      <figure class="game">
+          <figcaption>
+            <h2>${name}</h2>
+            <img src="/images/app/${images[0]}" alt="${description}">
+            <p>${description}</p>
+            <a href="javascript:;">Mais Imagens</a>
+          </figcaption>
+        </figure>
+    </script>
+    {/literal}
+
+    <div class="content" id="gamesList"></div>
+
+    <footer class="credits">
+      <p>Made with <span class="love">♥</span> by teachers who care about their students.</p>
+    </footer>
+  </div>
+{/template}

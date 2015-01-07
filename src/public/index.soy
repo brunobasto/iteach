@@ -1,273 +1,47 @@
 {namespace index}
 
 /**
- * This template will be rendered by SoyWeb when the user loads static.soy.
- * It deliberately includes dummy data so the designer can get a feel for how
- * the task list will appear with real data rather with minimal copy and paste.
+ * Index page.
  */
 {template .soyweb}
-{call main.page}
-  {param baseDir: './' /}
-  {param content}
-    <link rel="stylesheet" href="styles/home-grid.css">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    {call menu.side}
-      {param baseDir: './' /}
-      {param cssScope: 'index' /}
+  <meta name="author" content="Bruno Basto">
+  <meta name="description" content="A modern approach for teaching languages.">
+
+  <meta property="og:title" content="iTeach">
+  <meta property="og:description" content="A modern approach for teaching languages.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>iTeach</title>
+
+  <!-- build:css styles/all.min.css -->
+  <link rel="stylesheet" href="bower/pure/pure-min.css">
+  <link rel="stylesheet" href="styles/highlight.css">
+  <link rel="stylesheet" href="styles/side-menu.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body>
+  <div id="layout">
+    {call content.main}
+      {param baseDir: '' /}
     {/call}
-
-    <div id="main">
-      <div class="header">
-        <h1>iTeach</h1>
-        <h2>A modern approach for teaching languages</h2>
-      </div>
-      <div class="content"></div>
-
-      <div class="content">
-        <form class="pure-form">
-            <input id="search" type="text" class="pure-input-1 pure-input-rounded" placeholder="Search..." />
-        </form>
-      </div>
-
-      <div class="content">
-        {call .gamesList}
-          {param items: [
-            [
-              'name': 'Yrdiemu',
-              'description': 'Some description for the game',
-              'image': 'http://4.bp.blogspot.com/-QOv_TpUcKIQ/UAJJ5V6r9HI/AAAAAAAAB-U/LexcHmUmWhU/s1600/Games+iphone+wallpapers+1.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Ousto',
-              'description': 'Some description for the game',
-              'image': 'http://fc01.deviantart.net/fs71/f/2011/240/0/c/the_hunger_games_iphone_4g_by_nihilus_13-d486gdx.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Quaeb',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_tLrJUEkFyJ8JNS8swcTg4h1L2QWaYWl81vGYr8BF45NaVNsYew',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Shyran',
-              'description': 'Some description for the game',
-              'image': 'http://2.bp.blogspot.com/-_2N_eeEX09s/UAJKUzVSqvI/AAAAAAAAB_U/6RUYDnHBlJk/s1600/Games+iphone+wallpapers+3.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Inem',
-              'description': 'Some description for the game',
-              'image': 'http://1.bp.blogspot.com/-caAtXdJoByE/TcOIhACjDwI/AAAAAAAAAwg/kkgy5y9PTfk/s1600/Super+Mario+hd+iphone+wallpaper+by+maceme+wallpaper.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Aldck',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRLOi1ZKQFdsaHzBqRHx7fvuZWFBmnlil7sTqY9tCZjKyjK0EEX_A',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Laendver',
-              'description': 'Some description for the game',
-              'image': 'http://4.bp.blogspot.com/-wJ3-Kl6ky5A/T5i3LH1TlDI/AAAAAAAAKOc/afjQ8PcjTA8/s1600/IMG_1108.JPG',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Rantin',
-              'description': 'Some description for the game',
-              'image': 'http://2.bp.blogspot.com/-3AOliNZPbiQ/Tn2PSkG-VsI/AAAAAAAAA-g/jHf-jg9TUBg/s1600/starcraft_wings+of+liberty_wallpaper_3.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Echtor',
-              'description': 'Some description for the game',
-              'image': 'http://3.bp.blogspot.com/-Zrtepk330Os/TbwU6-RVZDI/AAAAAAAAAns/sz8I_SrF3kk/s1600/homefront+1+-+640+-+960.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Eathi',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVxIpWRaQsYMEsH5m8LtS_hnRZdQbpfx8Xj5ifGp7UgLbafBms',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Wartia',
-              'description': 'Some description for the game',
-              'image': 'http://2.bp.blogspot.com/-4yUPNnwbsvM/TpT8LbdksYI/AAAAAAAABjg/O0SQ1GReqjs/s1600/Captain+America+iPhone+4+Wallpapers.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Imwar',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgMM66aApKqaW4Jf5z92mm9_Tgs7IBCeGrWL1d0a1QLURqF4da7w',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Mosvora',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRhuJU9XLLL9Z8h2SLy7m4xJUuv363N6x0pyol6VM9f5djqdL0G',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Taiusk',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS4ncT_xn0Y-FyhkfAQRnbYMhVbreES5m7r-1GdflnKizbFcfkO',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Ashaledyn',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJmAdrmA71jVIA8PzF3mhacwF8-RShTyf72dQguiIvDN_YTcl7',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Schaeth',
-              'description': 'Some description for the game',
-              'image': 'http://4.bp.blogspot.com/-QOv_TpUcKIQ/UAJJ5V6r9HI/AAAAAAAAB-U/LexcHmUmWhU/s1600/Games+iphone+wallpapers+1.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Serhon',
-              'description': 'Some description for the game',
-              'image': 'http://fc01.deviantart.net/fs71/f/2011/240/0/c/the_hunger_games_iphone_4g_by_nihilus_13-d486gdx.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Cipocu',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_tLrJUEkFyJ8JNS8swcTg4h1L2QWaYWl81vGYr8BF45NaVNsYew',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Ackit',
-              'description': 'Some description for the game',
-              'image': 'http://2.bp.blogspot.com/-_2N_eeEX09s/UAJKUzVSqvI/AAAAAAAAB_U/6RUYDnHBlJk/s1600/Games+iphone+wallpapers+3.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Ingc',
-              'description': 'Some description for the game',
-              'image': 'http://1.bp.blogspot.com/-caAtXdJoByE/TcOIhACjDwI/AAAAAAAAAwg/kkgy5y9PTfk/s1600/Super+Mario+hd+iphone+wallpaper+by+maceme+wallpaper.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Aemy',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRLOi1ZKQFdsaHzBqRHx7fvuZWFBmnlil7sTqY9tCZjKyjK0EEX_A',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Saytran-old',
-              'description': 'Some description for the game',
-              'image': 'http://4.bp.blogspot.com/-wJ3-Kl6ky5A/T5i3LH1TlDI/AAAAAAAAKOc/afjQ8PcjTA8/s1600/IMG_1108.JPG',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Issroth',
-              'description': 'Some description for the game',
-              'image': 'http://2.bp.blogspot.com/-3AOliNZPbiQ/Tn2PSkG-VsI/AAAAAAAAA-g/jHf-jg9TUBg/s1600/starcraft_wings+of+liberty_wallpaper_3.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Eldnn',
-              'description': 'Some description for the game',
-              'image': 'http://3.bp.blogspot.com/-Zrtepk330Os/TbwU6-RVZDI/AAAAAAAAAns/sz8I_SrF3kk/s1600/homefront+1+-+640+-+960.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Izrode',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVxIpWRaQsYMEsH5m8LtS_hnRZdQbpfx8Xj5ifGp7UgLbafBms',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Endlkel',
-              'description': 'Some description for the game',
-              'image': 'http://2.bp.blogspot.com/-4yUPNnwbsvM/TpT8LbdksYI/AAAAAAAABjg/O0SQ1GReqjs/s1600/Captain+America+iPhone+4+Wallpapers.jpg',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Polend',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgMM66aApKqaW4Jf5z92mm9_Tgs7IBCeGrWL1d0a1QLURqF4da7w',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Engild',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRhuJU9XLLL9Z8h2SLy7m4xJUuv363N6x0pyol6VM9f5djqdL0G',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Kinang',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS4ncT_xn0Y-FyhkfAQRnbYMhVbreES5m7r-1GdflnKizbFcfkO',
-              'url': 'javascript:;'
-            ],
-
-            [
-              'name': 'Inebel',
-              'description': 'Some description for the game',
-              'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJmAdrmA71jVIA8PzF3mhacwF8-RShTyf72dQguiIvDN_YTcl7',
-              'url': 'javascript:;'
-            ]
-
-          ] /}
-        {/call}
-      </div>
-
-      <footer class="credits">
-        <p>Made with <span class="love">♥</span> by teachers who care about their students.</p>
-      </footer>
-    </div>
-  {/param}
-{/call}
-{/template}
-
-/**
- * @param items
- */
-{template .gamesList}
-  <div id="list" class="grid">
-    {foreach $item in $items}
-      <figure class="effect">
-        <img src="{$item.image}" alt="">
-        <figcaption>
-          <h2>{$item.name|noAutoescape}</h2>
-          <p>{$item.description}</p>
-          <a href="{$item.url}">View more</a>
-        </figcaption>
-      </figure>
-    {/foreach}
   </div>
+
+  <!-- build:js scripts/all.min.js -->
+  <script src="bower/jquery/dist/jquery.js"></script>
+  <script src="bower/jquery-ui/jquery-ui.js"></script>
+  <script src="scripts/jquery.fastLiveFilter.js"></script>
+  <script src="scripts/jquery.tmpl.js"></script>
+  <script src="scripts/side-menu.js"></script>
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
 {/template}
