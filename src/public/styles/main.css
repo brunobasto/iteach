@@ -143,3 +143,16 @@ a.pure-button-selected {
   margin-right: 10px;
   border-radius: 4px;
 }
+
+.filter-entry {
+  padding: 5px 0;
+}
+
+.filter-entry input[type="checkbox"] {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.filter-entry select {
+  margin: 0 5px;
+}
