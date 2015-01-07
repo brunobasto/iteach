@@ -19,8 +19,6 @@ $(function() {
 
 	var populateList = function(results) {
 		$("#gameTemplate").tmpl(results).appendTo("#gamesList");
-
-		// $('#query').fastLiveFilter('#gamesList');
 	};
 
 	// Initial population
@@ -93,7 +91,7 @@ $(function() {
 				}
 			});
 
-			console.log(filteredGames);
+			// console.log(filteredGames);
 		});
 	});
 });
