@@ -25,6 +25,50 @@ $(function() {
 		$('#gameTemplate').tmpl(results).appendTo(gamesList);
 	};
 
+	$('#openLogin').click(function() {
+		$('#loginError').hide();
+
+		$('#loginBox').dialog({
+			width: 350,
+			modal: true,
+			buttons: {
+		        Login: function() {
+					var login = $('#loginInput').val();
+
+					var name = login.substr(0, login.indexOf('@'));
+
+					$('#loginError').hide();
+
+					getGames(function(games) {
+						if (login.toLowerCase().indexOf('@professor') > -1) {
+							$('#teacherStuff').show();
+							$('#studentStuff').hide();
+
+							$('#teacherName').html(name);
+
+							$('#teacherGames').html($('#gameTemplate').tmpl(games.slice(0, 2)));
+
+							$('#loginBox').dialog('close');
+						}
+						else if (login.toLowerCase().indexOf('@aluno') > -1) {
+							$('#teacherStuff').hide();
+							$('#studentStuff').show();
+
+							$('#studentName').html(name);
+
+							$('#studentGames').html($('#gameTemplate').tmpl(games.slice(2, 4)));
+
+							$('#loginBox').dialog('close');
+						}
+						else {
+							$('#loginError').show();
+						}
+					});
+				}
+			}
+		});
+	});
+
 	// Initial population
 	getGames(populateList);
 
