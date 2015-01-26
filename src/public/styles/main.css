@@ -156,3 +156,39 @@ a.pure-button-selected {
 .filter-entry select {
   margin: 0 5px;
 }
+
+#loginBox {
+  display: none;
+}
+
+.login-field input {
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+}
+
+#loginButton {
+  margin-top: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.games-suggestion img {
+  display: inline !important;
+  margin: 0 !important;
+  width: 75px !important;
+}
+
+.games-suggestion figcaption, .games-suggestion figure {
+  display: inline;
+}
+
+.games-suggestion h2, .games-suggestion p, .games-suggestion a {
+  display: none;
+}
+
+.content.suggestion {
+  margin-bottom: 10px;
+}
