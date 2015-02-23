@@ -43,6 +43,8 @@ $(function() {
 						if (login.toLowerCase().indexOf('@professor') > -1) {
 							$('#teacherStuff').show();
 							$('#studentStuff').hide();
+							$('#moderatorStuff').hide();
+							$('#moderatorTips').hide();
 
 							$('#teacherName').html(name);
 
@@ -50,9 +52,23 @@ $(function() {
 
 							$('#loginBox').dialog('close');
 						}
+						else if (login.toLowerCase().indexOf('@moderador') > -1) {
+							$('#teacherStuff').hide();
+							$('#studentStuff').hide();
+							$('#moderatorStuff').show();
+							$('#moderatorTips').show();
+
+							$('#moderatorName').html(name);
+
+							$('#moderatorGames').html($('#gameTemplate').tmpl(games.slice(1, 3)));
+
+							$('#loginBox').dialog('close');
+						}
 						else if (login.toLowerCase().indexOf('@aluno') > -1) {
 							$('#teacherStuff').hide();
 							$('#studentStuff').show();
+							$('#moderatorStuff').hide();
+							$('#moderatorTips').hide();
 
 							$('#studentName').html(name);
 
