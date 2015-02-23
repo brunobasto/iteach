@@ -192,3 +192,36 @@ a.pure-button-selected {
 .content.suggestion {
   margin-bottom: 10px;
 }
+
+#moderatorTips {
+  display: none;
+}
+
+#moderatorTips ul {
+  position: relative;
+  visibility: visible;
+  top: auto;
+  left: auto;
+  font-size: 12px;
+  list-style: inherit;
+  list-style-type: circle;
+}
+
+#moderatorTips ul li {
+  margin: 10px 5px 5px 22px;
+  color: #FFF;
+}
+
+#moderatorHeading {
+  font-size: 22px;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+#moderatorStuff .number {
+  margin: 5px;
+}
+
+#moderatorTips h3 {
+  margin-left: 5px;
+}
